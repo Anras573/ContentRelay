@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Mock", "Mock", "{CF148BA7-A032-44EE-B356-5263D3A1D5D6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AssetMetadataProducer", "src/Mock\AssetMetadataProducer\AssetMetadataProducer.csproj", "{B0D6FFC8-DD29-4717-A8B0-E92C56B7AFFC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContentRelay.Shared", "src/ContentRelay.Shared\ContentRelay.Shared.csproj", "{22B043AA-A2C3-408D-BA5C-DDAC54C6848F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BriefingMetadataProducer", "src/Mock\BriefingMetadataProducer\BriefingMetadataProducer.csproj", "{576263EB-849F-47DD-A804-90F056B64C20}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{B0D6FFC8-DD29-4717-A8B0-E92C56B7AFFC} = {CF148BA7-A032-44EE-B356-5263D3A1D5D6}
+		{576263EB-849F-47DD-A804-90F056B64C20} = {CF148BA7-A032-44EE-B356-5263D3A1D5D6}
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B0D6FFC8-DD29-4717-A8B0-E92C56B7AFFC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0D6FFC8-DD29-4717-A8B0-E92C56B7AFFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B0D6FFC8-DD29-4717-A8B0-E92C56B7AFFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B0D6FFC8-DD29-4717-A8B0-E92C56B7AFFC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{22B043AA-A2C3-408D-BA5C-DDAC54C6848F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22B043AA-A2C3-408D-BA5C-DDAC54C6848F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22B043AA-A2C3-408D-BA5C-DDAC54C6848F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22B043AA-A2C3-408D-BA5C-DDAC54C6848F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{576263EB-849F-47DD-A804-90F056B64C20}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{576263EB-849F-47DD-A804-90F056B64C20}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{576263EB-849F-47DD-A804-90F056B64C20}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{576263EB-849F-47DD-A804-90F056B64C20}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

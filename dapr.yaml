@@ -1,0 +1,11 @@
+version: 1
+common:
+  resourcePaths:
+    - ./infrastructure/components
+apps:
+  - appId: assetMetadataProducer
+    appDirPath: ./Mock/AssetMetadataProducer
+    command: ["docker", "run", "-p", "5001:80", "asset-metadata-producer"]
+  - appId: briefingMetadataProducer
+    appDirPath: ./Mock/BriefingMetadataProducer
+    command: ["docker", "run", "-p", "5002:80", "briefing-metadata-producer"]
