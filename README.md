@@ -10,7 +10,5 @@ Aggregates data from various sources, and expose them through an interface.
 ## Getting Started
 
 1. Clone the repository
-2. Run `dapr init`
-3. Run `docker-compose up -d`
-4. Run `dapr run --app-id contentrelay --app-port 5000 --port 3500 python app.py`
-
+2. Run `dapr -v` to check if Dapr is installed
+3. Run `docker-compose up --build`
