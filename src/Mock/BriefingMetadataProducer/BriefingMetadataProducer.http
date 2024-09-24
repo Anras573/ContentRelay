@@ -1,4 +1,4 @@
-@BriefingMetadataProducer_HostAddress = http://localhost:5007
+@BriefingMetadataProducer_HostAddress = http://localhost:5002
 
 GET {{BriefingMetadataProducer_HostAddress}}/produce/
 Accept: application/json

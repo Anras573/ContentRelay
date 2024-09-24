@@ -3,7 +3,10 @@ using BriefingMetadataProducer.Readers;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddDaprClient();
+
 builder.Services.AddScoped<BriefingMetadataReader>();
+builder.Services.AddScoped<BriefingMetadataPublisher>();
 
 // Add services to the container.
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -37,7 +40,7 @@ app.MapPost("/produce",
     {
         var metadata = await reader.ReadMetadataAsync();
 
-        return metadata.MatchAsync(
+        return await metadata.MatchAsync(
             some: async data =>
             {
                 await publisher.PublishMetadataAsync(data, ctx);

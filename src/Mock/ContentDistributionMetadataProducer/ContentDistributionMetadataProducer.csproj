@@ -4,19 +4,19 @@
         <TargetFramework>net8.0</TargetFramework>
         <Nullable>enable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
+        <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
     </PropertyGroup>
 
     <ItemGroup>
         <PackageReference Include="Dapr.AspNetCore" Version="1.14.0" />
         <PackageReference Include="Dapr.Client" Version="1.14.0" />
-        <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="8.0.2"/>
+        <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="8.0.8"/>
         <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0"/>
     </ItemGroup>
 
     <ItemGroup>
-      <Content Include="..\..\.dockerignore">
+      <Content Include="..\..\..\.dockerignore">
         <Link>.dockerignore</Link>
-        <DependentUpon>Dockerfile</DependentUpon>
       </Content>
     </ItemGroup>
 

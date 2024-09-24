@@ -1,0 +1,73 @@
+services:
+  redis:
+    image: redis:alpine
+    ports: 
+      - "6379:6379"
+
+  mock-asset-metadata-producer:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://0.0.0.0:80
+    ports:
+      - "5001:80"
+      - "50001:50001"
+
+  mock-asset-metadata-dapr:
+    command: ["./daprd",
+      "-app-id", "mock-asset-metadata-producer",
+      "-app-port", "80",
+      "-components-path", "/components"
+      ]
+    volumes:
+      - ./infrastructure/components:/components
+
+  mock-briefing-metadata-producer:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://0.0.0.0:80
+    ports:
+      - "5002:80"
+      - "50002:50001"
+
+  mock-briefing-metadata-dapr:
+    command: ["./daprd",
+      "-app-id", "mock-briefing-metadata-producer",
+      "-app-port", "80",
+      "-components-path", "/components"
+      ]
+    volumes:
+      - ./infrastructure/components:/components
+
+  mock-content-distribution-metadata-producer:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://0.0.0.0:80
+    ports:
+      - "5003:80"
+      - "50003:50001"
+
+  mock-content-distribution-metadata-dapr:
+    command: ["./daprd",
+      "-app-id", "mock-content-distribution-metadata-producer",
+      "-app-port", "80",
+      "-components-path", "/components"
+      ]
+    volumes:
+      - ./infrastructure/components:/components
+
+  mock-order-list-metadata-producer:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://0.0.0.0:80
+    ports:
+      - "5004:80"
+      - "50004:50001"
+
+  mock-order-list-metadata-dapr:
+    command: ["./daprd",
+      "-app-id", "mock-order-list-metadata-producer",
+      "-app-port", "80",
+      "-components-path", "/components"
+      ]
+    volumes:
+      - ./infrastructure/components:/components

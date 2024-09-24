@@ -8,7 +8,7 @@ public class BriefingMetadataPublisher
     private readonly DaprClient _client;
     private readonly ILogger<BriefingMetadataPublisher> _logger;
     private const string PubSubName = "pubsub";
-    private const string TopicName = "asset-metadata-topic";
+    private const string TopicName = "briefing-metadata-topic";
 
     public BriefingMetadataPublisher(DaprClient client, ILogger<BriefingMetadataPublisher> logger)
     {
@@ -41,6 +41,5 @@ public class BriefingMetadataPublisher
             _logger.LogError(e, "Failed to publish metadata");
             throw;
         }
-        
     }
 }

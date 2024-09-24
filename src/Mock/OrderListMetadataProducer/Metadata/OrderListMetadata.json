@@ -1,0 +1,51 @@
+{
+    "orderNumber": "ORD123456789",
+    "requesterName": "John Doe",
+    "orderDate": "2023-06-27",
+    "campaignName" : "Star Wars Anniversary",
+    "totalBriefs": 15,
+    "briefs": [
+    {
+    "briefId": "BRIEF001",
+    "quantity": 2
+    },
+    {
+    "briefId": "BRIEF002",
+    "quantity": 1
+    },
+    {
+    "briefId": "BRIEF003",
+    "quantity": 3
+    },
+    {
+    "briefId": "BRIEF004",
+    "quantity": 1
+    },
+    {
+    "briefId": "BRIEF005",
+    "quantity": 2
+    },
+    {
+    "briefId": "BRIEF006",
+    "quantity": 1
+    },
+    {
+    "briefId": "BRIEF007",
+    "quantity": 1
+    },
+    {
+    "briefId": "BRIEF008",
+    "quantity": 1
+    },
+    {
+    "briefId": "BRIEF009",
+    "quantity": 1
+    },
+    {
+    "briefId": "BRIEF010",
+    "quantity": 2
+    }
+    ]
+    }
+    
+    

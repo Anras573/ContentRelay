@@ -7,15 +7,16 @@ EXPOSE 8081
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
-COPY ["Mock/AssetMetadataProducer/AssetMetadataProducer.csproj", "Mock/AssetMetadataProducer/"]
-RUN dotnet restore "Mock/AssetMetadataProducer/AssetMetadataProducer.csproj"
+COPY ["src/ContentRelay.Shared/ContentRelay.Shared.csproj", "src/ContentRelay.Shared/"]
+COPY ["src/Mock/AssetMetadataProducer/AssetMetadataProducer.csproj", "src/Mock/AssetMetadataProducer/"]
+RUN dotnet restore "src/Mock/AssetMetadataProducer/AssetMetadataProducer.csproj"
 COPY . .
-WORKDIR "/src/Mock/AssetMetadataProducer"
-RUN dotnet build "AssetMetadataProducer.csproj" -c $BUILD_CONFIGURATION -o /app/build
+WORKDIR "/src/src/Mock/AssetMetadataProducer"
+#RUN dotnet build "AssetMetadataProducer.csproj" -c $BUILD_CONFIGURATION -o /app/build
 
 FROM build AS publish
 ARG BUILD_CONFIGURATION=Release
-RUN dotnet publish "AssetMetadataProducer.csproj" -c $BUILD_CONFIGURATION -o /app/publish /p:UseAppHost=false
+RUN dotnet publish "AssetMetadataProducer.csproj" -c $BUILD_CONFIGURATION -o /app/publish --no-restore
 
 FROM base AS final
 WORKDIR /app

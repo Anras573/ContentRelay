@@ -41,6 +41,5 @@ public class AssetMetadataPublisher
             _logger.LogError(e, "Failed to publish metadata");
             throw;
         }
-        
     }
 }

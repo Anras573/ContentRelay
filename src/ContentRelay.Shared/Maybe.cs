@@ -2,31 +2,16 @@
 
 public class Maybe<T>
 {
-    private readonly T _value;
-    private readonly bool _hasValue;
+    private readonly T? _value;
 
     private Maybe()
     {
         _value = default;
-        _hasValue = false;
     }
     
     private Maybe(T value)
     {
         _value = value;
-        _hasValue = true;
-    }
-
-    public void Match(Action<T> some, Action none)
-    {
-        if (_value != null)
-        {
-            some(_value);
-        }
-        else
-        {
-            none();
-        }
     }
     
     public TOut Match<TOut>(Func<T, TOut> some, Func<TOut> none)
@@ -42,9 +27,6 @@ public class Maybe<T>
             ? some(_value)
             : none();
     }
-    
-    public bool HasValue => _hasValue;
-    public bool HasNoValue => !_hasValue;
     
     public static Maybe<T> Some(T value) => new (value);
     public static Maybe<T> None() => new ();
