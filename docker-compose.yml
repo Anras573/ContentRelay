@@ -2,6 +2,19 @@ services:
   redis:
     image: redis:alpine
     container_name: redis
+    
+  metadata-and-asset-management-service:
+    build:
+      context: .
+      dockerfile: src/ContentRelay.MAM.Web/Dockerfile
+    depends_on:
+      - redis
+
+  metadata-and-asset-management-service-dapr:
+    image: "daprio/dapr:1.14.4"
+    network_mode: "service:metadata-and-asset-management-service"
+    depends_on:
+      - metadata-and-asset-management-service
 
   mock-asset-metadata-producer:
     build:

@@ -3,6 +3,23 @@ services:
     image: redis:alpine
     ports: 
       - "6379:6379"
+        
+  metadata-and-asset-management-service:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://0.0.0.0:80
+    ports:
+      - "5000:80"
+      - "50000:50001"
+
+  metadata-and-asset-management-service-dapr:
+    command: [ "./daprd",
+               "-app-id", "metadata-and-asset-management-service",
+               "-app-port", "80",
+               "-components-path", "/components"
+    ]
+    volumes:
+      - ./infrastructure/components:/components
 
   mock-asset-metadata-producer:
     environment:
