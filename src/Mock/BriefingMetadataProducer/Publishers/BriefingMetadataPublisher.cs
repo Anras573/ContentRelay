@@ -28,11 +28,7 @@ public class BriefingMetadataPublisher
 
         try
         {
-            var publishTasks = metadata
-                .Select(data => _client
-                    .PublishEventAsync(PubSubName, TopicName, data, cancellationToken));
-            
-            await Task.WhenAll(publishTasks);
+            await _client.PublishEventAsync(PubSubName, TopicName, metadata, cancellationToken);
             
             _logger.LogInformation("Successfully published metadata for {Count} assets", metadata.Count);
         }
