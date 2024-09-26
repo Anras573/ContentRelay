@@ -1,0 +1,8 @@
+@AssetMetadataProducer_HostAddress = http://localhost:5001
+
+GET {{AssetMetadataProducer_HostAddress}}/produce/
+Accept: application/json
+
+###
+
+POST {{AssetMetadataProducer_HostAddress}}/produce/

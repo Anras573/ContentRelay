@@ -1,0 +1,8 @@
+@OrderListMetadataProducer_HostAddress = http://localhost:5004
+
+GET {{OrderListMetadataProducer_HostAddress}}/produce/
+Accept: application/json
+
+###
+
+POST {{OrderListMetadataProducer_HostAddress}}/produce/

@@ -1,0 +1,8 @@
+@ContentDistributionMetadataProducer_HostAddress = http://localhost:5003
+
+GET {{ContentDistributionMetadataProducer_HostAddress}}/produce/
+Accept: application/json
+
+###
+
+POST {{ContentDistributionMetadataProducer_HostAddress}}/produce/

@@ -1,0 +1,56 @@
+services:
+  redis:
+    image: redis:alpine
+    container_name: redis
+
+  mock-asset-metadata-producer:
+    build:
+      context: .
+      dockerfile: src/Mock/AssetMetadataProducer/Dockerfile
+    depends_on:
+      - redis
+
+  mock-asset-metadata-dapr:
+    image: "daprio/dapr:1.14.4"
+    network_mode: "service:mock-asset-metadata-producer"
+    depends_on:
+      - mock-asset-metadata-producer
+
+  mock-briefing-metadata-producer:
+    build:
+      context: .
+      dockerfile: src/Mock/BriefingMetadataProducer/Dockerfile
+    depends_on:
+      - redis
+
+  mock-briefing-metadata-dapr:
+    image: "daprio/dapr:1.14.4"
+    network_mode: "service:mock-briefing-metadata-producer"
+    depends_on:
+      - mock-briefing-metadata-producer
+
+  mock-content-distribution-metadata-producer:
+    build:
+      context: .
+      dockerfile: src/Mock/ContentDistributionMetadataProducer/Dockerfile
+    depends_on:
+      - redis
+
+  mock-content-distribution-metadata-dapr:
+    image: "daprio/dapr:1.14.4"
+    network_mode: "service:mock-content-distribution-metadata-producer"
+    depends_on:
+      - mock-content-distribution-metadata-producer
+
+  mock-order-list-metadata-producer:
+    build:
+      context: .
+      dockerfile: src/Mock/OrderListMetadataProducer/Dockerfile
+    depends_on:
+      - redis
+
+  mock-order-list-metadata-dapr:
+    image: "daprio/dapr:1.14.4"
+    network_mode: "service:mock-order-list-metadata-producer"
+    depends_on:
+      - mock-order-list-metadata-producer
