@@ -1,4 +1,4 @@
-﻿namespace ContentRelay.MAM.Web.Events;
+﻿namespace ContentRelay.MAM.Web.Events.Ingoing;
 
 public record AssetEvent(
     string AssetId,

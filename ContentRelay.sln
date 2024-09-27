@@ -24,6 +24,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionFolder", "SolutionF
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContentRelay.MAM.Web", "src\ContentRelay.MAM.Web\ContentRelay.MAM.Web.csproj", "{7337ABBB-6736-4304-828D-A44F1F53AC29}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContentRelay.MAM.Domain", "src\ContentRelay.MAM.Domain\ContentRelay.MAM.Domain.csproj", "{92F43501-3509-469D-BF3D-40D171252C96}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContentRelay.MAM.Domain.Tests", "test\ContentRelay.MAM.Domain.Tests\ContentRelay.MAM.Domain.Tests.csproj", "{96D86748-4BAE-4336-840A-9256D974E6AF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{6CB2ED70-8A99-4F9F-A6E5-B4A979A89766}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -37,6 +43,7 @@ Global
 		{576263EB-849F-47DD-A804-90F056B64C20} = {CF148BA7-A032-44EE-B356-5263D3A1D5D6}
 		{262567FA-6B43-4EDB-AD1E-60ACABF70A70} = {CF148BA7-A032-44EE-B356-5263D3A1D5D6}
 		{4E5CB269-111B-4AE8-93A8-D414704346E2} = {CF148BA7-A032-44EE-B356-5263D3A1D5D6}
+		{96D86748-4BAE-4336-840A-9256D974E6AF} = {6CB2ED70-8A99-4F9F-A6E5-B4A979A89766}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{B0D6FFC8-DD29-4717-A8B0-E92C56B7AFFC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -63,5 +70,13 @@ Global
 		{7337ABBB-6736-4304-828D-A44F1F53AC29}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7337ABBB-6736-4304-828D-A44F1F53AC29}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7337ABBB-6736-4304-828D-A44F1F53AC29}.Release|Any CPU.Build.0 = Release|Any CPU
+		{92F43501-3509-469D-BF3D-40D171252C96}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{92F43501-3509-469D-BF3D-40D171252C96}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{92F43501-3509-469D-BF3D-40D171252C96}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{92F43501-3509-469D-BF3D-40D171252C96}.Release|Any CPU.Build.0 = Release|Any CPU
+		{96D86748-4BAE-4336-840A-9256D974E6AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{96D86748-4BAE-4336-840A-9256D974E6AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{96D86748-4BAE-4336-840A-9256D974E6AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{96D86748-4BAE-4336-840A-9256D974E6AF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

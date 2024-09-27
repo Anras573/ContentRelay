@@ -28,5 +28,8 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 app.MapAssetMetadataEndpoints();
+app.MapBriefingMetadataEndpoints();
+app.MapContentDistributionMetadataEndpoints();
+app.MapOrderListMetadataEndpoints();
 
 app.Run();

@@ -13,13 +13,13 @@ public class ContentDistributionMetadataReader
         var json = await File.ReadAllTextAsync(MetadataPath);
         if (string.IsNullOrWhiteSpace(json))
         {
-            return Maybe<ContentDistributionMetadata>.None();
+            return Maybe<ContentDistributionMetadata>.None;
         }
         
         var metadata = JsonSerializer.Deserialize<ContentDistributionMetadata>(json);
         
         return metadata == null
-            ? Maybe<ContentDistributionMetadata>.None()
+            ? Maybe<ContentDistributionMetadata>.None
             : Maybe<ContentDistributionMetadata>.Some(metadata);
     }
 }

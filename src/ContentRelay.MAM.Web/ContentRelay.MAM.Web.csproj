@@ -21,7 +21,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Models\" />
+      <ProjectReference Include="..\ContentRelay.MAM.Domain\ContentRelay.MAM.Domain.csproj" />
     </ItemGroup>
 
 </Project>

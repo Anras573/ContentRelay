@@ -8,7 +8,7 @@ public class ContentDistributionMetadataPublisher
     private readonly DaprClient _client;
     private readonly ILogger<ContentDistributionMetadataPublisher> _logger;
     private const string PubSubName = "pubsub";
-    private const string TopicName = "briefing-metadata-topic";
+    private const string TopicName = "content-distribution-metadata-topic";
 
     public ContentDistributionMetadataPublisher(DaprClient client, ILogger<ContentDistributionMetadataPublisher> logger)
     {

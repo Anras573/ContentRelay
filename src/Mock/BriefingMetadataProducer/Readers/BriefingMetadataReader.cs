@@ -13,13 +13,13 @@ public class BriefingMetadataReader
         var json = await File.ReadAllTextAsync(MetadataPath);
         if (string.IsNullOrWhiteSpace(json))
         {
-            return Maybe<List<BriefingMetadata>>.None();
+            return Maybe<List<BriefingMetadata>>.None;
         }
         
         var metadata = JsonSerializer.Deserialize<List<BriefingMetadata>>(json);
         
         return metadata == null
-            ? Maybe<List<BriefingMetadata>>.None()
+            ? Maybe<List<BriefingMetadata>>.None
             : Maybe<List<BriefingMetadata>>.Some(metadata);
     }
 }

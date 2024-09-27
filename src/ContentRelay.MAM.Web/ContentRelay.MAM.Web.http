@@ -1,6 +1,6 @@
-@ContentRelay.MAM.Web_HostAddress = http://localhost:5127
+@ContentRelay_MAM_Web_HostAddress = http://localhost:5000
 
-GET {{ContentRelay.MAM.Web_HostAddress}}/weatherforecast/
+GET {{ContentRelay_MAM_Web_HostAddress}}/weatherforecast/
 Accept: application/json
 
 ###

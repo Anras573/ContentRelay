@@ -13,13 +13,13 @@ public class AssetMetadataReader
         var json = await File.ReadAllTextAsync(MetadataPath);
         if (string.IsNullOrWhiteSpace(json))
         {
-            return Maybe<List<AssetMetadata>>.None();
+            return Maybe<List<AssetMetadata>>.None;
         }
         
         var metadata = JsonSerializer.Deserialize<List<AssetMetadata>>(json);
         
         return metadata == null
-            ? Maybe<List<AssetMetadata>>.None()
+            ? Maybe<List<AssetMetadata>>.None
             : Maybe<List<AssetMetadata>>.Some(metadata);
     }
 }

@@ -8,7 +8,7 @@ public class OrderListMetadataPublisher
     private readonly DaprClient _client;
     private readonly ILogger<OrderListMetadataPublisher> _logger;
     private const string PubSubName = "pubsub";
-    private const string TopicName = "briefing-metadata-topic";
+    private const string TopicName = "order-list-metadata-topic";
 
     public OrderListMetadataPublisher(DaprClient client, ILogger<OrderListMetadataPublisher> logger)
     {

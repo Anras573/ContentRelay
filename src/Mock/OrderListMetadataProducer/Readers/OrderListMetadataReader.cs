@@ -13,13 +13,13 @@ public class OrderListMetadataReader
         var json = await File.ReadAllTextAsync(MetadataPath);
         if (string.IsNullOrWhiteSpace(json))
         {
-            return Maybe<OrderListMetadata>.None();
+            return Maybe<OrderListMetadata>.None;
         }
         
         var metadata = JsonSerializer.Deserialize<OrderListMetadata>(json);
         
         return metadata == null
-            ? Maybe<OrderListMetadata>.None()
+            ? Maybe<OrderListMetadata>.None
             : Maybe<OrderListMetadata>.Some(metadata);
     }
 }
