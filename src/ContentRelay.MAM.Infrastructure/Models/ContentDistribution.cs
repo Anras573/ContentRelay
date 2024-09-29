@@ -2,7 +2,7 @@
 
 public class ContentDistribution
 {
-    public string Id { get; set; }
+    public string Id { get; set; } = "";
     
     public DateTime DistributionDate { get; set; }
     public List<ContentDistributionAsset> Assets { get; set; } = [];

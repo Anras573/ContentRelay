@@ -44,7 +44,7 @@ public static class ContentDistributionMapper
                         validationErrors.Add(error.Key, error.Value);
                     }
                     
-                    return default;
+                    return default!;
                 }))
             .Select(asset => asset);
 

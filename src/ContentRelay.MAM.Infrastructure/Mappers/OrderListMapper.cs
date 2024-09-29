@@ -50,7 +50,7 @@ public static class OrderListMapper
                         validationErrors.Add(error.Key, error.Value);
                     }
                     
-                    return default;
+                    return default!;
                 }))
             .Select(brief => brief);
         
