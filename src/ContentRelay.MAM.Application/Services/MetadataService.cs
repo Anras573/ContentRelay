@@ -76,7 +76,7 @@ public class MetadataService
                 {
                     _logger.LogWarning("Skipping content distribution {ContentDistributionId} because no order list is associated with the briefing", contentDistribution.Id);
                     shouldSkip = true;
-                    return default;
+                    return default!;
                 });
             
             if (assets.Count != briefings.Count)
