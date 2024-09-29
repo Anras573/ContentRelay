@@ -1,0 +1,20 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Build ContentRelay.MAM Docker image
+      run: docker build . --file src/ContentRelay.MAM.Web/Dockerfile --tag content-relay-mam:$(date +%s)
+    - name: Build ContentRelay.CDS Docker image
+      run: docker build . --file src/ContentRelay.CDS.Web/Dockerfile --tag content-relay-cds:$(date +%s)
