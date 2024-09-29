@@ -9,6 +9,7 @@ public record AssetEvent(
     string Path,
     string CreatedBy,
     string VersionNumber,
+    string TimeStamp,
     string UserName,
     string Comments,
     string Preview,

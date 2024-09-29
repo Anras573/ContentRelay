@@ -2,8 +2,9 @@
 
 namespace ContentRelay.MAM.Domain;
 
-public record VersionNumber
+public record VersionNumber : ValueObject
 {
+    public static VersionNumber Empty => new(0, 0);
     public int Major { get; }
     public int Minor { get; }
     public string Value => $"{Major}.{Minor}";
@@ -14,7 +15,7 @@ public record VersionNumber
         Minor = minor;
     }
 
-    public static OneOf<VersionNumber, VersionNumberError> From(string version)
+    public static OneOf<VersionNumber, ValidationError> From(string version)
     {
         var parts = version.Split('.');
         if (parts.Length != 2)
@@ -34,9 +35,15 @@ public record VersionNumber
         
         return new VersionNumber(major, minor);
     }
+
+    protected override IEnumerable<object> GetEqualityComponents()
+    {
+        yield return Major;
+        yield return Minor;
+    }
 }
 
-public record VersionNumberError(string Message)
+public record VersionNumberError(string Message) : ValidationError(Message)
 {
     public static VersionNumberError InvalidVersion => new($"Version number must be in the format 'major.minor'");
     public static VersionNumberError InvalidMajor => new("Major version number must be an integer");

@@ -41,6 +41,18 @@ public class Maybe<T>
         }
     }
     
+    public async Task SwitchAsync(Func<T, Task> some, Func<Task> none)
+    {
+        if (_value != null)
+        {
+            await some(_value);
+        }
+        else
+        {
+            await none();
+        }
+    }
+    
     public bool IsNone => !HasValue;
     public bool IsSome => HasValue;
     

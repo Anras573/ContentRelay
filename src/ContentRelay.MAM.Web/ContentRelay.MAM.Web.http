@@ -1,6 +1,10 @@
 @ContentRelay_MAM_Web_HostAddress = http://localhost:5000
 
-GET {{ContentRelay_MAM_Web_HostAddress}}/weatherforecast/
+@id = ASSET001
+
+GET {{ContentRelay_MAM_Web_HostAddress}}/assetmetadata/{{id}}/
 Accept: application/json
 
 ###
+
+POST {{ContentRelay_MAM_Web_HostAddress}}/metadata/

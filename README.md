@@ -1,5 +1,13 @@
 # ContentRelay
-Aggregates data from various sources, and expose them through an interface.
+
+Content Relay is a Dapr application that aggregates data from various sources, and expose Metadata through an interface.
+
+Consists of the following components:
+
+- **ContentRelay.MAM**: The application that aggregates data from various sources.
+- **ContentRelay.CDS**: The application that exposes metadata, content, and assets.
+
+"MAM" stands for "Metadata and Asset Management" and "CDS" stands for "Content Delivery Service".
 
 ## Prerequisites
 

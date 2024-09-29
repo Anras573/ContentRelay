@@ -1,6 +1,8 @@
-﻿namespace ContentRelay.Shared;
+﻿using System.Collections;
 
-public class ValidationErrors
+namespace ContentRelay.Shared;
+
+public class ValidationErrors : IEnumerable<KeyValuePair<string, string>>
 {
     private readonly Dictionary<string, string> _errors = new();
     
@@ -10,4 +12,13 @@ public class ValidationErrors
     }
     
     public bool Any => _errors.Count != 0;
+    public IEnumerator<KeyValuePair<string, string>> GetEnumerator()
+    {
+        return _errors.GetEnumerator();
+    }
+
+    IEnumerator IEnumerable.GetEnumerator()
+    {
+        return GetEnumerator();
+    }
 }

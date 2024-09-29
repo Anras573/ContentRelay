@@ -21,7 +21,9 @@
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\ContentRelay.MAM.Application\ContentRelay.MAM.Application.csproj" />
       <ProjectReference Include="..\ContentRelay.MAM.Domain\ContentRelay.MAM.Domain.csproj" />
+      <ProjectReference Include="..\ContentRelay.MAM.Infrastructure\ContentRelay.MAM.Infrastructure.csproj" />
     </ItemGroup>
 
 </Project>
