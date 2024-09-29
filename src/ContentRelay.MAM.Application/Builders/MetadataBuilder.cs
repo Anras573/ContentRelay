@@ -9,10 +9,10 @@ public class MetadataBuilder :
     IMetadataContentDistributionBuilder,
     IMetadataBuilder
 {
-    private Asset _asset;
-    private Briefing _briefing;
-    private ContentDistribution _contentDistribution;
-    private OrderList _orderList;
+    private Asset? _asset;
+    private Briefing? _briefing;
+    private ContentDistribution? _contentDistribution;
+    private OrderList? _orderList;
     
     public IMetadataBriefingBuilder WithAsset(Asset asset)
     {
@@ -40,6 +40,12 @@ public class MetadataBuilder :
 
     public Metadata Build()
     {
+        // This should never happen due to the way the builder is used.
+        if (_asset == null || _briefing == null || _contentDistribution == null || _orderList == null)
+        {
+            throw new InvalidOperationException("MetadataBuilder is missing required data.");
+        }
+        
         var quantity = _orderList.Briefs.First(b => b.Id == _briefing.Id).Quantity;
         var fileUrl = _contentDistribution.Assets.First(a => a.Id == _asset.Id).FileUrl;
         

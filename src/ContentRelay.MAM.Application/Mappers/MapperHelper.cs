@@ -16,7 +16,7 @@ public static class MapperHelper
             success => success,
             error => {
                 validationErrors.Add(fieldName, error.Message);
-                return default;
+                return default!;
             });
     }
     
@@ -31,7 +31,7 @@ public static class MapperHelper
             success => success,
             error => {
                 validationErrors.Add(fieldName, error.Message);
-                return default;
+                return default!;
             });
     }
     
@@ -46,7 +46,7 @@ public static class MapperHelper
             success => success,
             error => {
                 validationErrors.Add(fieldName, error.Message);
-                return default;
+                return default!;
             });
     }
     
